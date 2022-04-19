@@ -1,12 +1,16 @@
 {
   "name": "sage-project",
+  "homepage": "https://chloeward00.github.io/sage",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
+    "export": "npm run build && next export -o _static",
     "start": "next start",
     "lint": "next lint",
+    "predeploy": "npm run build",
+    
+    "deploy": "gh-pages -d build",
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
@@ -66,6 +70,7 @@
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-plugin-testing-library": "5.0.1",
+    "gh-pages": "^3.2.3",
     "jest": "27.4.5"
   },
   "optionalDependencies": {
